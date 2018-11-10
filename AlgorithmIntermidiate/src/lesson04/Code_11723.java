@@ -1,4 +1,6 @@
-package algorithms;
+package lesson04;
+import java.util.Scanner;
+
 /*
 집합 
 
@@ -92,7 +94,45 @@ public class Code_11723 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		
+		Scanner scan = new Scanner(System.in);
+		//문자를 한번에 받기 위해서 StringBuilder를 사용합시다.
+		StringBuilder result = new StringBuilder();
+		// 내가 할 연산 횟수를 지정 
+		int num = scan.nextInt();
+		//비어있는 공집합 S
+		int S =0;
+		for(int i=0; i<num; i++) {
+			//처음 입력 받는 말로 경우를 나누기 위해 입력받는 말을 command라고 지정한다.
+			String command = scan.next();
+			if(command.equals("add")) {
+				//추가할 숫자를 입력 받기
+				int x = scan.nextInt();
+				//S에 x를 추가한다. 
+				S =S|(1<<x);
+				System.out.println("add된 값: S: "+S );
+				
+			}
+			else if(command.equals("remove")) {
+				int x = scan.nextInt();
+				//S에 x를 제거한다. 
+				S=S&~(1<<x);
+				System.out.println("remove된 값: S: "+S );
+			}else if(command.equals("check")) {
+				int x = scan.nextInt();
+				if((S&(1<<x))>0) result.append("1\n");
+				else result.append("0\n");
+			}else if(command.equals("toggle")) {
+				int x = scan.nextInt();
+				//S에 x가 있으면 제거하고 없으면 x 추가
+				S=S^(1<<x);
+			}else if(command.equals("all")) {
+				
+				S=(1<<21)-1;
+			}else
+				S=0;
+		}
+		System.out.println(result);
 	}
 
 }
