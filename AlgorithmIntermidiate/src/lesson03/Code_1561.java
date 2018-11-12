@@ -1,4 +1,5 @@
-package algorithms;
+package lesson03;
+import java.util.*;
 /*
 놀이 공원 
 
@@ -49,7 +50,68 @@ public class Code_1561 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		//사람의 수 -> n
+		int n = sc.nextInt();
+		//놀이기구의 수 -> m
+		int m = sc.nextInt();
+		//play에 개수를 넣는다.
+	/*	double[] play =new double[m];*/
+		double[] play = new double[10001];
+		//운행시간
+		int time;
+		double lo=0, hi=2e9*31, mid, sum;
+		for(int i=1; i<m; i++) {
+			play[i]=i;
+		}
+		//놀이기구보다 사람 수가 적으면 n을 출력한다. 마지막으로 탄 아이의 놀이기구 번호는 자기의 번호이다.
+		if(n<=m) {
+			System.out.println(n);
+		}
+		
 
+		while(lo+1!=hi) {
+			mid =(lo+hi)/2;
+			
+			sum=m;
+			for(int i=0; i<m;i++) {
+				sum +=mid/play[i];
+			}
+			if(sum>=n) hi =mid;
+			else lo= mid;
+		}
+		
+		sum= m;
+		for(int i=0; i<m; i++)
+			sum +=lo/play[i];
+		
+		if(sum>=n) {
+			lo--;
+			sum=m;
+			for(int i=0; i<m; i++)
+				sum+=lo/play[i];
+		}
+		
+		lo++;
+		
+		if(sum==n) {
+			System.out.println(m);
+		}
+		if(lo==0) {
+			System.out.println(n);
+		}
+		for(int i=0; i<m; i++) {
+			if(lo%play[i]==0) {
+				sum++;
+				if(sum==n) {
+					System.out.println(i+1);
+					break;
+				}
+			}
+		}
 	}
+
+
 
 }
