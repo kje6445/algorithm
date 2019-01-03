@@ -21,7 +21,7 @@ N(2≤N≤10,000)개의 섬으로 이루어진 나라가 있다. 이들 중 몇 
 1 3
 예제 출력 1 복사 
 3*/
-public class Code_1939 {
+public class Code_2805 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
