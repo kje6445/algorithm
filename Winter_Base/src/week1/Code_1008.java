@@ -1,3 +1,4 @@
+package week1;
 import java.util.Scanner;
 
 //A/B 스페셜 저지 

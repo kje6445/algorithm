@@ -1,3 +1,4 @@
+package week1;
 import java.util.Scanner;
 /*
 그대로 출력하기 
