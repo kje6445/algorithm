@@ -25,16 +25,19 @@ public class Code_2441 {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
-		String[] star = new String[n];
+		String[] star = new String[n]; //star 배열 생성 
 		for(int i=0; i<n;i++) {
 			star[i]="*";
 		}
 		
-		for(int i=n-1; i>=0; i--) { //5개 
-			for(int j=0; j<n; j++) {
-				System.out.print(star[j]);
+		for(int i=0; i<n; i++) { //n회 반복 -> 5입력시 5줄 출력 
+			for(int k=0; k<n; k++) {//별들을 출력하는 반복문
+				System.out.print(star[k]); 
+				star[0]=" ";
+				for(int empty=k; empty<i; empty++ ) { //배열의 앞부분에서 부터 하나씩 공백을 넣어준다. 
+					star[empty]=" ";
+				}
 			}
-			for(int k=0; )
 			System.out.println();
 		}
 		
