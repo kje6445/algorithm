@@ -45,8 +45,7 @@ public class Code_4344 {
 					student[i][k]=sc.nextInt();
 					sum[i]+=student[i][k];
 				}
-			aver[i]=sum[i]/student[i][0];
-			System.out.println(aver[i]);
+			aver[i]=(double)(sum[i]/student[i][0]);
 		}
 		for(int i=0; i<C; i++) {
 			for(int k=1; k<=num; k++) {
@@ -54,17 +53,15 @@ public class Code_4344 {
 					count++;
 			}
 			counts[i]=count;
-			System.out.println("사람수"+student[i][0]);
-			persent[i]=(counts[i]*100/student[i][0]);
-			System.out.println(count);
 			count=0;
 		}
 		for(int j=0; j<C; j++) {
-		    System.out.printf("%.3f",persent[j]);
+			persent[j]=(double)(counts[j]*100/student[j][0]);
+		    System.out.printf("%.3f",(double)counts[j]*100/student[j][0]);
 		    System.out.println("%");
 		    
-		    System.out.println(Math.round(persent[j]*1000)/1000.0);
 		}
+
 	}
 
 }
