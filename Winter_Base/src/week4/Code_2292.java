@@ -1,26 +1,9 @@
 package week4;
+
+import java.util.Scanner;
+
 /*
 벌집 
-
-
-
-
-
-시간 제한
-
-메모리 제한
-
-제출
-
-정답
-
-맞은 사람
-
-정답 비율
-
-
-2 초 128 MB 19163 8817 7655 47.006% 
-
 
 
 
@@ -69,6 +52,19 @@ public class Code_2292 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+		Scanner sc = new Scanner(System.in);
+		//계차수열 a열, 등차수열인 bn = 6n 
+		//an = a(n-1)+b(n-1)
+		//end의 값을 입력 받는다.
+		int end=sc.nextInt();
+		int number=1;
+		int cnt=1; //카운트
+		
+		while(number<end) { //도착지 숫자보다 높으면 break;
+			number += cnt*6; //현재 위치 1+6*cnt씩 증가.
+			cnt++;
+		}
+		System.out.println(cnt);
 	}
 
 }

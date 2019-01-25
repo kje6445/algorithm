@@ -7,27 +7,6 @@ import java.util.Scanner;
 
 
 
-
-
-시간 제한
-
-메모리 제한
-
-제출
-
-정답
-
-맞은 사람
-
-정답 비율
-
-
-1 초 128 MB 52020 31396 27721 62.074% 
-
-
-
-
-
 문제
  
 
@@ -76,6 +55,20 @@ public class Code_2438 {
 
 		Scanner sc = new Scanner(System.in);
 		int N =sc.nextInt();
+		
+		char star = '*';
+		char[] stars = new char[N];
+		
+		for(int i=0; i<N; i++) {
+			stars[i]=star;
+		}
+		
+		for(int i=0; i<N; i++) {
+			for(int j=0; j<=i; j++) {
+				System.out.print(stars[i]);
+			}
+			System.out.println();
+		}
 	}
 
 }
