@@ -66,6 +66,7 @@ public class Code_1011 {
 			 x=sc.nextInt();
 			 y=sc.nextInt();
 			//2의 n승으로 증가하는 것을 기준점으로 값을 구한다.
+			 
 		}
 	}
 
