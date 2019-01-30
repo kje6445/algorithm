@@ -78,8 +78,10 @@ public class Code_2775 {
 			for(int r=1; r<=k; r++) { // 반복문을 돌려서 입력 받는 층과 호의 
 				for(int j=1; j<=n; j++) {
 					apartment[r][j] = apartment[r][j-1] + apartment[r-1][j]; // k층의 n까지의 각 층과 호의 값을 구한다.
+					//apartment[r][j-1] -> 그 전까지 apartment[r-1][j-1]까지의 합을 합한 것이다.
 				}
 			}
+
 			bw.write(String.valueOf(apartment[k][n] )); // 거주민 수를 출력한다.
 			bw.newLine();
 		}
