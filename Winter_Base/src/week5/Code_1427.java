@@ -1,6 +1,10 @@
 package week5;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 
 /*소트인사이드 
 
@@ -43,13 +47,30 @@ import java.util.Scanner;
 */
 public class Code_1427 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-		Scanner sc = new Scanner(System.in);
-		String N = sc.next();
-		int[] arr = new int[N.length()];
-//		arr = Integer.parseInt(N.split(""));
-			//문제 해결 방안 -> 문자를 입력받은 뒤에 문자를 짤라서 붙인 다음에 숫자를 비교한다.
+		//문제 해결 방안 -> 문자를 입력받은 뒤에 문자를 짤라서 붙인 다음에 숫자를 비교한다.
+	
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		String inputNumber = br.readLine();
+		int[] sortArray = new int[inputNumber.length()];//inputNumber의 길이 만큼 int형 배열을 생성한다.
+		
+		for(int i=0; i<inputNumber.length(); i++) {
+			//sortArray배열에 string인 inputNumber을 char형으로 한 글자로 나눈다음 int형 변환한다.
+			// static int getNumericValue(char ch) ->  Unicode 문자를 정수로 리턴한다.
+			 
+			sortArray[Character.getNumericValue(inputNumber.charAt(i))]++;
+		}
+		
+		for(int i=sortArray.length-1; i>=0; i--) {
+			
+			while(sortArray[i] != 0) {
+			bw.write(String.valueOf(i));
+			sortArray[i]--;
+			}
+		}
+		bw.flush();
 	}
 
 }
