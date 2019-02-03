@@ -89,7 +89,7 @@ public class Code_1181 {
 		st = new StringTokenizer(br.readLine());
 		int N = Integer.parseInt(st.nextToken());
 		HashSet<String> sortedSet =new HashSet<>();
-		
+		// StringTokenizer을 이용해 문자를 잘라서  Hashset인 해시 함수를 이용해 타입을 추가
 		for(int i=0; i<N; i++) {
 			st = new StringTokenizer(br.readLine());
 			sortedSet.add(st.nextToken());
@@ -100,7 +100,7 @@ public class Code_1181 {
 		
 		sortedSet.toArray(sortedArray);
 		Arrays.sort(sortedArray);
-		
+		//오름차순으로 정렬을 함에 있어 익명의 클래스를 사용하기 때문에 Comparator을 이용하여 문제 해결 
 		Arrays.sort(sortedArray, new Comparator<String>() {
 			@Override
 			public int compare(String o1,String o2 ) {
