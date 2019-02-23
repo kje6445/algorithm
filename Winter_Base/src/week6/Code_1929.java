@@ -1,5 +1,6 @@
 package week6;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /*
@@ -56,6 +57,25 @@ public class Code_1929 {
 		int N = sc.nextInt();
 		//M 과 N 사이의 수를 소수를 구한다. -> 소수는 자기 자신보다 작은 수들로 나눠서 하나라도 나눠지면 소수가 아니다.
 		// 즉 하나라도 나눠지면 반복문을 탈출해서 소수라고 구해준다.
+		int check=0; // -> 0이면 소수  1이면 소수가 아니다.
+		ArrayList primeNum = new ArrayList(); // 소수들을 저장할 리스트
+		
+		for(int i=M; i<=N; i++) {
+			if((i==1)||(i==2)) {
+				check=1;
+			}
+			for(int j=2; j<i; j++) { //소수를 구하는 반복문 -> 자기 자신(i)보다 작은 수까지 나눠서 소수 구하기
+				if(i%j==0) { // 나눠지게 되면 소수가 아니다.
+					check=1;
+					break;
+				}
+			}
+			if(check==0) { //check가 0이면 소수라는 의미
+				primeNum.add(i); //List에 소수를 추가
+				System.out.println(i);
+			}
+			check=0; //다음 수를 구하기 위해 check를 0으로 초기화 해준다.
+		}
 	}
 
 }
