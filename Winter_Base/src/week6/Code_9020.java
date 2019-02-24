@@ -62,16 +62,31 @@ public class Code_9020 {
 		Scanner sc = new Scanner(System.in);
 		int N = sc.nextInt(); //테스트 케이스를 입력
 		ArrayList nums = new ArrayList(); //골드바흐 파티션을 구할 값을 입력 받아 저장할 수
-		
+		ArrayList help = new ArrayList(); //소수를 구하기 전에 소수인지 판
+		ArrayList primes = new ArrayList(); //소수가 정장되어있는 List
+		int max=0; 
 		for(int i=0; i<N; i++) {
 			int num =sc.nextInt();
 			nums.add(num);
+			if(max<=num)
+				max=num;
 		}
 		
-		for(int j=0; j<N; j++) {
+		for(int i=1; i<max; i++) {
+			help.add(i);
+			for(int j=1; j<i; j++) {
+				
+			}
+		}
+/*		for(int j=1; j<) {
 			
+		}*/
+		for(int j=0; j<N; j++) {
+			System.out.println(nums.get(j));
 		}
 		//작은 수부터 소수를 구한 다음에  값을 비교해서 출력 한다. 
+		//ArrayList의 크기 출력 nums.size()
+		//ArrayList의 그 인덱스의 값 출력 nums.get(index);
 	}
 
 }
