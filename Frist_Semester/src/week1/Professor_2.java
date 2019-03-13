@@ -1,10 +1,10 @@
 package week1;
-/*<홀수 짝수 분리>
+/*<문자 정렬>
 
-입력: 정수 배열 int[]
-출력 짝수들이 배열의 앞부분에, 홀수들은 배열의 뒷부분에 위치해야 함
+입력: 문자 배열 char[]
+      배열에는 소문자만 들어있다 
 
-짝수들은 순서, 홀수은 순서 무관*/
+출력: 알파벳 순으로 배열 정렬하기*/
 public class Professor_2 {
 
 	public static void main(String[] args) {
