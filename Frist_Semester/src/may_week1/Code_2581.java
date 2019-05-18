@@ -67,7 +67,7 @@ public class Code_2581 {
 			if(isPrime(i)) { // isPrime함수를 사용해서 소수인지 판별하고 소수라면 아래와 같은 문장 이행
 				sum+=i;	//소수의 합을 더하라
 				count++; //소수의 개수를 합하라
-				if(min == 0) {
+				if(min == 0) { //min=0이면 min이 없기 때문에 min을 i로 지정한다.
 					min = i;
 				}
 			}
