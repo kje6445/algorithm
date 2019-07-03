@@ -1,5 +1,5 @@
 package week1;
-import java.util.*;
+import java.util.Scanner;
 /*
 피보나치 함수 
 
@@ -39,46 +39,36 @@ fibonacci(3)을 호출하면 다음과 같은 일이 일어난다.
 
 
 public class A_1003 {
-
+	
+	private static int sumZero=0;
+	private static int sumFirst=0;
+	
 	public static int fibonacci(int n) {
 		if(n==0) {
-			/*System.out.println("0");*/
+			++sumZero; 
 			return 0;
 		}
 		else if(n==1) {
-			/*System.out.println("1");*/
+			++sumFirst;
 			return 1;
 		}else {
 		return fibonacci(n-1) + fibonacci(n-2);
 		}
 	}
-	
-	public static void sum(int n) {
-		int sumZero=0, sumFirst=0;
-		if(n == 0) 
-			++sumZero; 
-		else
-			++sumFirst;
-		 System.out.println(sumZero +" "+ sumFirst);
-	}
-	
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		//지금 컴파일 에러가 발생했다. -> 아마 엔터키로 다음키로 넘어가기때문일 것 같음
 		Scanner sc = new Scanner(System.in);
 		int T = sc.nextInt();
 		int arr[] = new int[T];
 		
 		for(int i=0; i<T; i++) {
 			arr[i]=sc.nextInt();
-			System.out.println();
 			fibonacci(arr[i]);
-			System.out.println("연습 하긔!");
-		    System.out.println(fibonacci(arr[i]));
-		    System.out.println("연습 하긔!2");
-//		    System.out.println(sum);
+			System.out.println(sumZero + " "+ sumFirst);
+			sumZero=0; sumFirst=0;
 		}
 		
 	}
-
 }
